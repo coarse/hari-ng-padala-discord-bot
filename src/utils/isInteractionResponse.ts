@@ -1,7 +1,6 @@
-import { InteractionCallbackData } from "discordeno/mod.ts";
-
 import {
-  InteractionResponse
+  InteractionCallbackData,
+  InteractionResponse,
 } from "discordeno/mod.ts";
 
 export function isInteractionResponse(

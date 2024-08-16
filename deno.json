@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "strict": true
+  },
+  "tasks": {
+    "compile": "deno compile -A -r --import-map src/import_map.jsonc --config deno.jsonc --output build/server mod.ts",
+    "run": "deno run --allow-net --allow-env --allow-write --allow-read --watch mod.ts"
+  },
+  "imports": {
+    "@std/encoding": "jsr:@std/encoding@^1.0.1",
+    "@teever/ez-hook": "jsr:@teever/ez-hook@^0.2.5",
+    "template/": "./src/",
+    "camelize/": "https://deno.land/x/camelize@2.0.0/",
+    "sift/": "https://deno.land/x/sift@0.6.0/",
+    "discordeno/": "https://deno.land/x/discordeno@18.0.1/"
+  }
+}

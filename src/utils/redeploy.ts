@@ -5,7 +5,7 @@ import {
 } from "../../deps.ts";
 import {  } from "sift/mod.ts";
 
-import { decode } from "encoding/base64url.ts";
+import { decodeBase64Url } from "@std/encoding";
 import { json } from "sift/mod.ts";
 
 import { commands } from "template/commands/mod.ts";
@@ -27,7 +27,7 @@ export async function updateGlobalCommands() {
   const token = Deno.env.get("DISCORD_TOKEN");
   rest.token = `Bot ${token}`;
   setApplicationId(
-    new TextDecoder().decode(decode(token?.split(".")[0] || "")) || "",
+    new TextDecoder().decode(decodeBase64Url(token?.split(".")[0] || "")) || "",
   );
 
   // UPDATE GLOBAL COMMANDS
